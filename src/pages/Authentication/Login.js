@@ -244,7 +244,7 @@ const Login = (props) => {
                         </Row>
                     </Container>
                 </div>
-            {/* </ParticlesAuth> */}
+            </ParticlesAuth>
         </React.Fragment>
     );
 };
