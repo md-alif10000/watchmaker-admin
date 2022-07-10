@@ -37,12 +37,12 @@ const leftsidbarSizeTypes = {
   DEFAULT: "lg",
   COMPACT: "md",
   SMALLICON: "sm",
-  SMALLHOVER: "sm-hover"
+  SMALLHOVER: "sm-hover",
 };
 
 const leftSidebarViewTypes = {
   DEFAULT: "default",
-  DETACHED : "detached"
+  DETACHED: "detached",
 };
 
 const leftSidebarImageTypes = {
@@ -50,7 +50,7 @@ const leftSidebarImageTypes = {
   IMG1: "img-1",
   IMG2: "img-2",
   IMG3: "img-3",
-  IMG4: "img-4",  
+  IMG4: "img-4",
 };
 
 export {
@@ -62,5 +62,5 @@ export {
   topbarThemeTypes,
   leftsidbarSizeTypes,
   leftSidebarViewTypes,
-  leftSidebarImageTypes
+  leftSidebarImageTypes,
 };

@@ -31,7 +31,11 @@ import { Rating, Published, Price } from "./EcommerceProductCol";
 import { productsData } from "../../../common/data";
 
 //Import actions
-import { getProducts as onGetProducts, deleteProducts, resetEcomFlag } from "../../../store/ecommerce/action";
+import {
+  getProducts as onGetProducts,
+  deleteProducts,
+  resetEcomFlag,
+} from "../../../store/ecommerce/action";
 import { isEmpty } from "lodash";
 import Select from "react-select";
 import MsgToast from "../../../Components/Common/MsgToast";
@@ -39,23 +43,40 @@ import MsgToast from "../../../Components/Common/MsgToast";
 //redux
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const SingleOptions = [
-  { value: 'Watches', label: 'Watches' },
-  { value: 'Headset', label: 'Headset' },
-  { value: 'Sweatshirt', label: 'Sweatshirt' },
-  { value: '20% off', label: '20% off' },
-  { value: '4 star', label: '4 star' },
+  { value: "Watches", label: "Watches" },
+  { value: "Headset", label: "Headset" },
+  { value: "Sweatshirt", label: "Sweatshirt" },
+  { value: "20% off", label: "20% off" },
+  { value: "4 star", label: "4 star" },
 ];
 
 const EcommerceProducts = (props) => {
   const dispatch = useDispatch();
+  const [myProducts, setmyProducts] = useState([]);
 
-  const { products, isProductDelete, isProductDeleteFail } = useSelector((state) => ({
-    products: state.Ecommerce.products,
-    isProductDelete: state.Ecommerce.isProductDelete,
-    isProductDeleteFail: state.Ecommerce.isProductDeleteFail,
-  }));
+  
+  const getMyProducts = () => {
+    axios.get("/admin/products").then((res)=>setmyProducts(res.products))
+  };
+
+  useEffect(() => {
+    getMyProducts();
+  }, []);
+
+
+
+  
+
+  const { products, isProductDelete, isProductDeleteFail } = useSelector(
+    (state) => ({
+      products: state.Ecommerce.products,
+      isProductDelete: state.Ecommerce.isProductDelete,
+      isProductDeleteFail: state.Ecommerce.isProductDeleteFail,
+    })
+  );
 
   useEffect(() => {
     setTimeout(() => {
@@ -72,30 +93,32 @@ const EcommerceProducts = (props) => {
     setselectedMulti(selectedMulti);
   }
 
-  useEffect(() => {
-    if (products && !products.length) {
-      dispatch(onGetProducts());
-    }
-  }, [dispatch, products]);
+  // useEffect(() => {
+  //   if (products && !products.length) {
+  //     dispatch(onGetProducts());
+  //   }
+  // }, [dispatch, products]);
 
-  useEffect(() => {
-    setProductList(products);
-  }, [products]);
+  // useEffect(() => {
+  //   setProductList(products);
+  // }, [products]);
 
-  useEffect(() => {
-    dispatch(onGetProducts());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(onGetProducts());
+  // }, [dispatch]);
 
-  useEffect(() => {
-    if (!isEmpty(products)) setProductList(products);
-  }, [products]);
+  // useEffect(() => {
+  //   if (!isEmpty(products)) setProductList(products);
+  // }, [products]);
 
   const toggleTab = (tab, type) => {
     if (activeTab !== tab) {
       setActiveTab(tab);
       let filteredProducts = products;
       if (type !== "all") {
-        filteredProducts = products.filter((product) => product.status === type);
+        filteredProducts = products.filter(
+          (product) => product.status === type
+        );
       }
       setProductList(filteredProducts);
     }
@@ -106,7 +129,9 @@ const EcommerceProducts = (props) => {
   const categories = (category) => {
     let filteredProducts = products;
     if (category !== "all") {
-      filteredProducts = products.filter((product) => product.category === category);
+      filteredProducts = products.filter(
+        (product) => product.category === category
+      );
     }
     setProductList(filteredProducts);
     setCate(category);
@@ -115,7 +140,7 @@ const EcommerceProducts = (props) => {
   const onUpdate = (value) => {
     setProductList(
       productsData.filter(
-        (product) => product.price >= value[0] && product.price <= value[1],
+        (product) => product.price >= value[0] && product.price <= value[1]
       )
     );
   };
@@ -124,8 +149,8 @@ const EcommerceProducts = (props) => {
   /*
   on change rating checkbox method
   */
-  const onChangeRating = value => {
-    setProductList(productsData.filter(product => product.rating >= value));
+  const onChangeRating = (value) => {
+    setProductList(productsData.filter((product) => product.rating >= value));
 
     var modifiedRating = [...ratingvalues];
     modifiedRating.push(value);
@@ -134,7 +159,7 @@ const EcommerceProducts = (props) => {
 
   const onUncheckMark = (value) => {
     var modifiedRating = [...ratingvalues];
-    const modifiedData = (modifiedRating || []).filter(x => x !== value);
+    const modifiedData = (modifiedRating || []).filter((x) => x !== value);
     /*
     find min values
     */
@@ -143,7 +168,7 @@ const EcommerceProducts = (props) => {
       var minValue = Math.min(...modifiedData);
       if (minValue && minValue !== Infinity) {
         filteredProducts = productsData.filter(
-          product => product.rating >= minValue
+          (product) => product.rating >= minValue
         );
         setRatingvalues(modifiedData);
       }
@@ -168,7 +193,8 @@ const EcommerceProducts = (props) => {
     }
   };
 
-  const columns = useMemo(() => [
+  const columns = useMemo(
+    () => [
       {
         Header: "#",
         Cell: () => {
@@ -183,7 +209,9 @@ const EcommerceProducts = (props) => {
               <div className="flex-shrink-0 me-3">
                 <div className="avatar-sm bg-light rounded p-1">
                   <img
-                    src={process.env.REACT_APP_API_URL + "/images/products/" + product.row.original.image}
+                    src={
+                      product.row.original?.images[0]?.url
+                    }
                     alt=""
                     className="img-fluid d-block"
                   />
@@ -200,10 +228,10 @@ const EcommerceProducts = (props) => {
                   </Link>
                 </h5>
                 <p className="text-muted mb-0">
-                  Category :{" "}
+                  Color :{" "}
                   <span className="fw-medium">
-                    {" "}
-                    {product.row.original.category}
+                    {product.row.original?.color}
+                
                   </span>
                 </p>
               </div>
@@ -225,24 +253,27 @@ const EcommerceProducts = (props) => {
         },
       },
       {
-        Header: "Orders",
-        accessor: "orders",
-        filterable: false,
-      },
-      {
-        Header: "Rating",
-        accessor: "rating",
+        Header: "Brand",
+        accessor: "brand",
         filterable: false,
         Cell: (cellProps) => {
-          return <Rating {...cellProps} />;
+          return <div> { cellProps.row.original.brand?.name }</div>;
         },
       },
       {
-        Header: "Published",
+        Header: "Model",
+        accessor: "model",
+        filterable: false,
+        Cell: (cellProps) => {
+          return <div> { cellProps.row.original.model?.name }</div>;
+        },
+      },
+      {
+        Header: "reference",
         accessor: "publishedDate",
         filterable: false,
         Cell: (cellProps) => {
-          return <Published {...cellProps} />;
+          return <div> { cellProps.row.original.reference }</div>;
         },
       },
       {
@@ -302,7 +333,7 @@ const EcommerceProducts = (props) => {
         <Row>
           <Col xl={3} lg={4}>
             <Card>
-              <CardHeader >
+              <CardHeader>
                 <div className="d-flex mb-3">
                   <div className="flex-grow-1">
                     <h5 className="fs-16">Filters</h5>
@@ -334,14 +365,32 @@ const EcommerceProducts = (props) => {
                     </p>
                     <ul className="list-unstyled mb-0 filter-list">
                       <li>
-                        <Link to="#" className={cate === "Kitchen Storage & Containers" ? "active d-flex py-1 align-items-center" : "d-flex py-1 align-items-center"} onClick={() => categories("Kitchen Storage & Containers")}>
+                        <Link
+                          to="#"
+                          className={
+                            cate === "Kitchen Storage & Containers"
+                              ? "active d-flex py-1 align-items-center"
+                              : "d-flex py-1 align-items-center"
+                          }
+                          onClick={() =>
+                            categories("Kitchen Storage & Containers")
+                          }
+                        >
                           <div className="flex-grow-1">
                             <h5 className="fs-13 mb-0 listname">Grocery</h5>
                           </div>
                         </Link>
                       </li>
                       <li>
-                        <Link to="#" className={cate === "Clothes" ? "active d-flex py-1 align-items-center" : "d-flex py-1 align-items-center"} onClick={() => categories("Clothes")}>
+                        <Link
+                          to="#"
+                          className={
+                            cate === "Clothes"
+                              ? "active d-flex py-1 align-items-center"
+                              : "d-flex py-1 align-items-center"
+                          }
+                          onClick={() => categories("Clothes")}
+                        >
                           <div className="flex-grow-1">
                             <h5 className="fs-13 mb-0 listname">Fashion</h5>
                           </div>
@@ -351,14 +400,30 @@ const EcommerceProducts = (props) => {
                         </Link>
                       </li>
                       <li>
-                        <Link to="#" className={cate === "Watches" ? "active d-flex py-1 align-items-center" : "d-flex py-1 align-items-center"} onClick={() => categories("Watches")}>
+                        <Link
+                          to="#"
+                          className={
+                            cate === "Watches"
+                              ? "active d-flex py-1 align-items-center"
+                              : "d-flex py-1 align-items-center"
+                          }
+                          onClick={() => categories("Watches")}
+                        >
                           <div className="flex-grow-1">
                             <h5 className="fs-13 mb-0 listname">Watches</h5>
                           </div>
                         </Link>
                       </li>
                       <li>
-                        <Link to="#" className={cate === "electronics" ? "active d-flex py-1 align-items-center" : "d-flex py-1 align-items-center"} onClick={() => categories("electronics")}>
+                        <Link
+                          to="#"
+                          className={
+                            cate === "electronics"
+                              ? "active d-flex py-1 align-items-center"
+                              : "d-flex py-1 align-items-center"
+                          }
+                          onClick={() => categories("electronics")}
+                        >
                           <div className="flex-grow-1">
                             <h5 className="fs-13 mb-0 listname">Electronics</h5>
                           </div>
@@ -368,7 +433,15 @@ const EcommerceProducts = (props) => {
                         </Link>
                       </li>
                       <li>
-                        <Link to="#" className={cate === "Furniture" ? "active d-flex py-1 align-items-center" : "d-flex py-1 align-items-center"} onClick={() => categories("Furniture")}>
+                        <Link
+                          to="#"
+                          className={
+                            cate === "Furniture"
+                              ? "active d-flex py-1 align-items-center"
+                              : "d-flex py-1 align-items-center"
+                          }
+                          onClick={() => categories("Furniture")}
+                        >
                           <div className="flex-grow-1">
                             <h5 className="fs-13 mb-0 listname">Furniture</h5>
                           </div>
@@ -378,14 +451,32 @@ const EcommerceProducts = (props) => {
                         </Link>
                       </li>
                       <li>
-                        <Link to="#" className={cate === "Bike Accessories" ? "active d-flex py-1 align-items-center" : "d-flex py-1 align-items-center"} onClick={() => categories("Bike Accessories")}>
+                        <Link
+                          to="#"
+                          className={
+                            cate === "Bike Accessories"
+                              ? "active d-flex py-1 align-items-center"
+                              : "d-flex py-1 align-items-center"
+                          }
+                          onClick={() => categories("Bike Accessories")}
+                        >
                           <div className="flex-grow-1">
-                            <h5 className="fs-13 mb-0 listname">Automotive Accessories</h5>
+                            <h5 className="fs-13 mb-0 listname">
+                              Automotive Accessories
+                            </h5>
                           </div>
                         </Link>
                       </li>
                       <li>
-                        <Link to="#" className={cate === "appliances" ? "active d-flex py-1 align-items-center" : "d-flex py-1 align-items-center"} onClick={() => categories("appliances")}>
+                        <Link
+                          to="#"
+                          className={
+                            cate === "appliances"
+                              ? "active d-flex py-1 align-items-center"
+                              : "d-flex py-1 align-items-center"
+                          }
+                          onClick={() => categories("appliances")}
+                        >
                           <div className="flex-grow-1">
                             <h5 className="fs-13 mb-0 listname">Appliances</h5>
                           </div>
@@ -395,7 +486,17 @@ const EcommerceProducts = (props) => {
                         </Link>
                       </li>
                       <li>
-                        <Link to="#" className={cate === "Bags, Wallets and Luggage" ? "active d-flex py-1 align-items-center" : "d-flex py-1 align-items-center"} onClick={() => categories("Bags, Wallets and Luggage")} >
+                        <Link
+                          to="#"
+                          className={
+                            cate === "Bags, Wallets and Luggage"
+                              ? "active d-flex py-1 align-items-center"
+                              : "d-flex py-1 align-items-center"
+                          }
+                          onClick={() =>
+                            categories("Bags, Wallets and Luggage")
+                          }
+                        >
                           <div className="flex-grow-1">
                             <h5 className="fs-13 mb-0 listname">Kids</h5>
                           </div>
@@ -671,7 +772,7 @@ const EcommerceProducts = (props) => {
                               className="form-check-input"
                               type="checkbox"
                               id="productratingRadio4"
-                              onChange={e => {
+                              onChange={(e) => {
                                 if (e.target.checked) {
                                   onChangeRating(4);
                                 } else {
@@ -698,7 +799,7 @@ const EcommerceProducts = (props) => {
                               className="form-check-input"
                               type="checkbox"
                               id="productratingRadio3"
-                              onChange={e => {
+                              onChange={(e) => {
                                 if (e.target.checked) {
                                   onChangeRating(3);
                                 } else {
@@ -729,7 +830,7 @@ const EcommerceProducts = (props) => {
                             <label
                               className="form-check-label"
                               htmlFor="productratingRadio2"
-                              onChange={e => {
+                              onChange={(e) => {
                                 if (e.target.checked) {
                                   onChangeRating(2);
                                 } else {
@@ -752,7 +853,7 @@ const EcommerceProducts = (props) => {
                               className="form-check-input"
                               type="checkbox"
                               id="productratingRadio1"
-                              onChange={e => {
+                              onChange={(e) => {
                                 if (e.target.checked) {
                                   onChangeRating(1);
                                 } else {
@@ -899,10 +1000,10 @@ const EcommerceProducts = (props) => {
                         id="table-product-list-all"
                         className="table-card gridjs-border-none pb-2"
                       >
-                        {productList && productList.length > 0 ? (
+                        {myProducts && myProducts.length > 0 ? (
                           <TableContainer
                             columns={columns}
-                            data={(productList || [])}
+                            data={myProducts || []}
                             isGlobalFilter={false}
                             isAddUserList={false}
                             customPageSize={10}
@@ -929,8 +1030,20 @@ const EcommerceProducts = (props) => {
                       </div>
                     </TabPane>
                   </TabContent>
-                  {isProductDelete ? <MsgToast msg="Product Deleted Successfully" color="success" icon="ri-checkbox-circle-line"/> : null}
-                  {isProductDeleteFail ? <MsgToast msg="Product Deleted Failed" color="danger" icon="ri-error-warning-line" /> : null}
+                  {isProductDelete ? (
+                    <MsgToast
+                      msg="Product Deleted Successfully"
+                      color="success"
+                      icon="ri-checkbox-circle-line"
+                    />
+                  ) : null}
+                  {isProductDeleteFail ? (
+                    <MsgToast
+                      msg="Product Deleted Failed"
+                      color="danger"
+                      icon="ri-error-warning-line"
+                    />
+                  ) : null}
                 </div>
               </div>
             </div>
