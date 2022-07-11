@@ -57,18 +57,13 @@ const EcommerceProducts = (props) => {
   const dispatch = useDispatch();
   const [myProducts, setmyProducts] = useState([]);
 
-  
   const getMyProducts = () => {
-    axios.get("/admin/products").then((res)=>setmyProducts(res.products))
+    axios.get("/admin/products").then((res) => setmyProducts(res.products));
   };
 
   useEffect(() => {
     getMyProducts();
   }, []);
-
-
-
-  
 
   const { products, isProductDelete, isProductDeleteFail } = useSelector(
     (state) => ({
@@ -209,9 +204,7 @@ const EcommerceProducts = (props) => {
               <div className="flex-shrink-0 me-3">
                 <div className="avatar-sm bg-light rounded p-1">
                   <img
-                    src={
-                      product.row.original?.images[0]?.url
-                    }
+                    src={product.row.original?.images[0]?.url}
                     alt=""
                     className="img-fluid d-block"
                   />
@@ -231,7 +224,6 @@ const EcommerceProducts = (props) => {
                   Color :{" "}
                   <span className="fw-medium">
                     {product.row.original?.color}
-                
                   </span>
                 </p>
               </div>
@@ -257,7 +249,7 @@ const EcommerceProducts = (props) => {
         accessor: "brand",
         filterable: false,
         Cell: (cellProps) => {
-          return <div> { cellProps.row.original.brand?.name }</div>;
+          return <div> {cellProps.row.original.brand?.name}</div>;
         },
       },
       {
@@ -265,7 +257,7 @@ const EcommerceProducts = (props) => {
         accessor: "model",
         filterable: false,
         Cell: (cellProps) => {
-          return <div> { cellProps.row.original.model?.name }</div>;
+          return <div> {cellProps.row.original.model?.name}</div>;
         },
       },
       {
@@ -273,7 +265,7 @@ const EcommerceProducts = (props) => {
         accessor: "publishedDate",
         filterable: false,
         Cell: (cellProps) => {
-          return <div> { cellProps.row.original.reference }</div>;
+          return <div> {cellProps.row.original.reference}</div>;
         },
       },
       {
@@ -318,7 +310,7 @@ const EcommerceProducts = (props) => {
     ],
     []
   );
-  document.title = "Products | Velzon - React Admin & Dashboard Template";
+  document.title = "Products | Watch Maker";
 
   return (
     <div className="page-content">

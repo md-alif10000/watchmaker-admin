@@ -100,7 +100,11 @@ const EcommerceAddProduct = () => {
     try {
       const res = await axios.post("/admin/product/new", myForm);
 
+   
+
       toast.success("Product Added Successfully");
+      setselectedFiles([])
+      setimagesPreview([])
     } catch (error) {
       toast.error(error.response.data.message);
       toast.error("Something Went Wrong");
