@@ -1,0 +1,78 @@
+.wizard{
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    margin: 0 auto;
+    height: 80vh;
+    background-color: #ffffff;
+    max-width: 1200px!important;
+    position: relative;
+    margin-top: 100px;
+
+}
+.header{
+    height: 80px;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.header h3{
+
+    text-transform: uppercase;
+    color: var(--primary);
+}
+.progress{
+    width: 80%;
+    display: flex;
+    background-color: #e4e3e3;
+    margin: 0 auto;
+}
+.progress > div{
+    flex: 1;
+    height: 12px;
+    border-radius: 7px;
+   background-color: rgb(185, 182, 182);
+    margin: 5px;
+}
+.content{
+    flex: 1;
+    background-color: #e4e3e3;
+    width: 100%;
+    padding: 3vw;
+}
+.actions{
+    height: 80px;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+.actions button{
+    width: 120px;
+    height: 45px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    border: 1px solid gray;
+}
+.actions .next{
+    background-color: rgb(12, 190, 235);
+    color: #ffffff;
+    text-transform: uppercase;
+}
+@media screen and (max-width:800px) {
+    .wizard{
+        position: fixed;
+        top: 0;
+        z-index: 99;
+        height: 100vh;
+    }
+    .progress > div{
+        height: 5px;
+        border-radius: 2px;
+    }
+    
+}

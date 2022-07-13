@@ -51,6 +51,11 @@ import EcommerceCheckout from "../pages/Ecommerce/EcommerceCheckout";
 import EcommerceSellers from "../pages/Ecommerce/EcommerceSellers/index";
 import EcommerceSellerDetail from "../pages/Ecommerce/EcommerceSellers/EcommerceSellerDetail";
 
+import AddProduct from "../pages/Ecommerce/AddProduct";
+
+
+
+
 
 // Widgets
 import Widgets from "../pages/Widgets/Index";
@@ -148,6 +153,7 @@ const authProtectedRoutes = [
     component: EcommerceProductDetail,
   },
   { path: "/apps-ecommerce-add-product", component: EcommerceAddProduct },
+  { path: "/add-product", component: AddProduct },
   { path: "/apps-ecommerce-orders", component: EcommerceOrders },
   { path: "/apps-ecommerce-order-details", component: EcommerceOrderDetail },
   { path: "/apps-ecommerce-customers", component: EcommerceCustomers },

@@ -884,7 +884,7 @@ const EcommerceProducts = (props) => {
                     <div className="col-sm-auto">
                       <div>
                         <Link
-                          to="/apps-ecommerce-add-product"
+                          to="/add-product"
                           className="btn btn-success"
                         >
                           <i className="ri-add-line align-bottom me-1"></i> Add
