@@ -115,21 +115,17 @@ function EcommerceProductDetail(props) {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const [ttop, setttop] = useState(false);
 
-  const [ssize, setssize] = useState(false);
-  const [msize, setmsize] = useState(false);
-  const [lsize, setlsize] = useState(false);
-  const [xlsize, setxlsize] = useState(false);
   const [customActiveTab, setcustomActiveTab] = useState("1");
-  const toggleCustom = tab => {
+  const toggleCustom = (tab) => {
     if (customActiveTab !== tab) {
       setcustomActiveTab(tab);
     }
   };
 
-document.title ="Product Details | Velzon - React Admin & Dashboard Template";
+  document.title = "Product Details | Watch Maker";
   return (
     <div className="page-content">
-      <Container fluid>        
+      <Container fluid>
         <BreadCrumb title="Product Details" pageTitle="Ecommerce" />
 
         <Row>
@@ -147,28 +143,28 @@ document.title ="Product Details | Velzon - React Admin & Dashboard Template";
                         <div className="swiper-wrapper">
                           <SwiperSlide>
                             <img
-                              src={product8}
+                              src={"https://cdn2.chrono24.com/images/uhren/24197382-74gb8w0cdtnc5dx38akfgb8e-ExtraLarge.jpg"}
                               alt=""
                               className="img-fluid d-block"
                             />
                           </SwiperSlide>
                           <SwiperSlide>
                             <img
-                              src={product6}
+                              src={"https://cdn2.chrono24.com/images/uhren/24197382-fcz1sndcgennv16cd67lxbtf-ExtraLarge.jpg"}
                               alt=""
                               className="img-fluid d-block"
                             />
                           </SwiperSlide>
                           <SwiperSlide>
                             <img
-                              src={product1}
+                              src={"https://cdn2.chrono24.com/images/uhren/24197382-hl9ws2lonox22jf6n6ui1k15-ExtraLarge.jpg"}
                               alt=""
                               className="img-fluid d-block"
                             />
                           </SwiperSlide>
                           <SwiperSlide>
                             <img
-                              src={product8}
+                              src={"https://cdn2.chrono24.com/images/uhren/24197382-jo9ciet1986q36yqn502exes-ExtraLarge.jpg"}
                               alt=""
                               className="img-fluid d-block"
                             />
@@ -189,7 +185,7 @@ document.title ="Product Details | Velzon - React Admin & Dashboard Template";
                             <SwiperSlide className="rounded">
                               <div className="nav-slide-item">
                                 <img
-                                  src={product8}
+                                     src={"https://cdn2.chrono24.com/images/uhren/24197382-74gb8w0cdtnc5dx38akfgb8e-ExtraLarge.jpg"}
                                   alt=""
                                   className="img-fluid d-block rounded"
                                 />
@@ -198,7 +194,7 @@ document.title ="Product Details | Velzon - React Admin & Dashboard Template";
                             <SwiperSlide>
                               <div className="nav-slide-item">
                                 <img
-                                  src={product6}
+                                   src={"https://cdn2.chrono24.com/images/uhren/24197382-fcz1sndcgennv16cd67lxbtf-ExtraLarge.jpg"}
                                   alt=""
                                   className="img-fluid d-block rounded"
                                 />
@@ -207,7 +203,7 @@ document.title ="Product Details | Velzon - React Admin & Dashboard Template";
                             <SwiperSlide>
                               <div className="nav-slide-item">
                                 <img
-                                  src={product1}
+                                  src={"https://cdn2.chrono24.com/images/uhren/24197382-hl9ws2lonox22jf6n6ui1k15-ExtraLarge.jpg"}
                                   alt=""
                                   className="img-fluid d-block rounded"
                                 />
@@ -216,7 +212,7 @@ document.title ="Product Details | Velzon - React Admin & Dashboard Template";
                             <SwiperSlide>
                               <div className="nav-slide-item">
                                 <img
-                                  src={product8}
+                             src={"https://cdn2.chrono24.com/images/uhren/24197382-jo9ciet1986q36yqn502exes-ExtraLarge.jpg"}
                                   alt=""
                                   className="img-fluid d-block rounded"
                                 />
@@ -232,7 +228,10 @@ document.title ="Product Details | Velzon - React Admin & Dashboard Template";
                     <div className="mt-xl-0 mt-5">
                       <div className="d-flex">
                         <div className="flex-grow-1">
-                          <h4>Full Sleeve Sweatshirt for Men (Pink)</h4>
+                          <h4>
+                            Rolex Daytona “Silver Dial” Chronograph 18k White
+                            Gold Oysterfelx Bracelet Box Papers “In Stock”
+                          </h4>
                           <div className="hstack gap-3 flex-wrap">
                             <div>
                               <Link to="#" className="text-primary d-block">
@@ -250,7 +249,7 @@ document.title ="Product Details | Velzon - React Admin & Dashboard Template";
                             <div className="text-muted">
                               Published :{" "}
                               <span className="text-body fw-medium">
-                                26 Mar, 2021
+                                26 Mar, 2022
                               </span>
                             </div>
                           </div>
@@ -300,265 +299,7 @@ document.title ="Product Details | Velzon - React Admin & Dashboard Template";
                         ))}
                       </Row>
 
-                      <Row>
-                        <Col xl={6}>
-                          <div className=" mt-4">
-                            <h5 className="fs-14">Sizes :</h5>
-                            <div className="d-flex flex-wrap gap-2">
-                              <Tooltip
-                                placement="top"
-                                isOpen={ssize}
-                                target="TooltipSSize"
-                                toggle={() => {
-                                  setssize(!ssize);
-                                }}
-                              >
-                                Out of Stock
-                              </Tooltip>
-                              <Tooltip
-                                placement="top"
-                                isOpen={msize}
-                                target="TooltipMSize"
-                                toggle={() => {
-                                  setmsize(!msize);
-                                }}
-                              >
-                                04 Items Available
-                              </Tooltip>
-                              <Tooltip
-                                placement="top"
-                                isOpen={lsize}
-                                target="TooltipLSize"
-                                toggle={() => {
-                                  setlsize(!lsize);
-                                }}
-                              >
-                                06 Items Available
-                              </Tooltip>
-                              <Tooltip
-                                placement="top"
-                                isOpen={xlsize}
-                                target="TooltipXlSize"
-                                toggle={() => {
-                                  setxlsize(!xlsize);
-                                }}
-                              >
-                                Out of Stock
-                              </Tooltip>
-
-                              <Input
-                                type="radio"
-                                className="btn-check"
-                                name="productsize-radio"
-                              />
-                              <Label
-                                className="btn btn-soft-primary avatar-xs rounded-circle p-0 d-flex justify-content-center align-items-center"
-                                id="TooltipSSize"
-                              >
-                                S
-                              </Label>
-
-                              <Input
-                                type="radio"
-                                className="btn-check"
-                                name="productsize-radio"
-                              />
-                              <Label
-                                className="btn btn-soft-primary avatar-xs rounded-circle p-0 d-flex justify-content-center align-items-center"
-                                id="TooltipMSize"
-                              >
-                                M
-                              </Label>
-
-                              <Input
-                                type="radio"
-                                className="btn-check"
-                                name="productsize-radio"
-                              />
-                              <Label
-                                className="btn btn-soft-primary avatar-xs rounded-circle p-0 d-flex justify-content-center align-items-center"
-                                id="TooltipLSize"
-                              >
-                                L
-                              </Label>
-
-                              <Input
-                                type="radio"
-                                className="btn-check"
-                                name="productsize-radio"
-                              />
-                              <Label
-                                className="btn btn-soft-primary avatar-xs rounded-circle p-0 d-flex justify-content-center align-items-center"
-                                id="TooltipXlSize"
-                              >
-                                XL
-                              </Label>
-                            </div>
-                          </div>
-                        </Col>
-
-                        <Col xl={6}>
-                          <div className=" mt-4">
-                            <h5 className="fs-14">Colors :</h5>
-                            <div className="d-flex flex-wrap gap-2">
-                              <div
-                                data-bs-toggle="tooltip"
-                                data-bs-trigger="hover"
-                                data-bs-placement="top"
-                                title="Out of Stock"
-                              >
-                                <button
-                                  type="button"
-                                  className="btn avatar-xs p-0 d-flex align-items-center justify-content-center border rounded-circle fs-20 text-primary"
-                                  disabled
-                                >
-                                  <i className="ri-checkbox-blank-circle-fill"></i>
-                                </button>
-                              </div>
-                              <div
-                                data-bs-toggle="tooltip"
-                                data-bs-trigger="hover"
-                                data-bs-placement="top"
-                                title="03 Items Available"
-                              >
-                                <button
-                                  type="button"
-                                  className="btn avatar-xs p-0 d-flex align-items-center justify-content-center border rounded-circle fs-20 text-secondary"
-                                >
-                                  <i className="ri-checkbox-blank-circle-fill"></i>
-                                </button>
-                              </div>
-                              <div
-                                data-bs-toggle="tooltip"
-                                data-bs-trigger="hover"
-                                data-bs-placement="top"
-                                title="03 Items Available"
-                              >
-                                <button
-                                  type="button"
-                                  className="btn avatar-xs p-0 d-flex align-items-center justify-content-center border rounded-circle fs-20 text-success"
-                                >
-                                  <i className="ri-checkbox-blank-circle-fill"></i>
-                                </button>
-                              </div>
-                              <div
-                                data-bs-toggle="tooltip"
-                                data-bs-trigger="hover"
-                                data-bs-placement="top"
-                                title="02 Items Available"
-                              >
-                                <button
-                                  type="button"
-                                  className="btn avatar-xs p-0 d-flex align-items-center justify-content-center border rounded-circle fs-20 text-info"
-                                >
-                                  <i className="ri-checkbox-blank-circle-fill"></i>
-                                </button>
-                              </div>
-                              <div
-                                data-bs-toggle="tooltip"
-                                data-bs-trigger="hover"
-                                data-bs-placement="top"
-                                title="01 Items Available"
-                              >
-                                <button
-                                  type="button"
-                                  className="btn avatar-xs p-0 d-flex align-items-center justify-content-center border rounded-circle fs-20 text-warning"
-                                >
-                                  <i className="ri-checkbox-blank-circle-fill"></i>
-                                </button>
-                              </div>
-                              <div
-                                data-bs-toggle="tooltip"
-                                data-bs-trigger="hover"
-                                data-bs-placement="top"
-                                title="04 Items Available"
-                              >
-                                <button
-                                  type="button"
-                                  className="btn avatar-xs p-0 d-flex align-items-center justify-content-center border rounded-circle fs-20 text-danger"
-                                >
-                                  <i className="ri-checkbox-blank-circle-fill"></i>
-                                </button>
-                              </div>
-                              <div
-                                data-bs-toggle="tooltip"
-                                data-bs-trigger="hover"
-                                data-bs-placement="top"
-                                title="03 Items Available"
-                              >
-                                <button
-                                  type="button"
-                                  className="btn avatar-xs p-0 d-flex align-items-center justify-content-center border rounded-circle fs-20 text-light"
-                                >
-                                  <i className="ri-checkbox-blank-circle-fill"></i>
-                                </button>
-                              </div>
-                              <div
-                                data-bs-toggle="tooltip"
-                                data-bs-trigger="hover"
-                                data-bs-placement="top"
-                                title="04 Items Available"
-                              >
-                                <button
-                                  type="button"
-                                  className="btn avatar-xs p-0 d-flex align-items-center justify-content-center border rounded-circle fs-20 text-dark"
-                                >
-                                  <i className="ri-checkbox-blank-circle-fill"></i>
-                                </button>
-                              </div>
-                            </div>
-                          </div>
-                        </Col>
-                      </Row>
-
-                      <div className="mt-4 text-muted">
-                        <h5 className="fs-14">Description :</h5>
-                        <p>
-                          Tommy Hilfiger men striped pink sweatshirt. Crafted
-                          with cotton. Material composition is 100% organic
-                          cotton. This is one of the world’s leading designer
-                          lifestyle brands and is internationally recognized for
-                          celebrating the essence of classic American cool
-                          style, featuring preppy with a twist designs.
-                        </p>
-                      </div>
-
-                      <Row>
-                        <Col sm={6}>
-                          <div className="mt-3">
-                            <h5 className="fs-14">Features :</h5>
-                            <ul className="list-unstyled">
-                              <li className="py-1">
-                                <i className="mdi mdi-circle-medium me-1 text-muted align-middle"></i>{" "}
-                                Full Sleeve
-                              </li>
-                              <li className="py-1">
-                                <i className="mdi mdi-circle-medium me-1 text-muted align-middle"></i>{" "}
-                                Cotton
-                              </li>
-                              <li className="py-1">
-                                <i className="mdi mdi-circle-medium me-1 text-muted align-middle"></i>{" "}
-                                All Sizes available
-                              </li>
-                              <li className="py-1">
-                                <i className="mdi mdi-circle-medium me-1 text-muted align-middle"></i>{" "}
-                                4 Different Color
-                              </li>
-                            </ul>
-                          </div>
-                        </Col>
-                        <Col sm={6}>
-                          <div className="mt-3">
-                            <h5 className="fs-14">Services :</h5>
-                            <ul className="list-unstyled product-desc-list">
-                              <li className="py-1">10 Days Replacement</li>
-                              <li className="py-1">
-                                Cash on Delivery available
-                              </li>
-                            </ul>
-                          </div>
-                        </Col>
-                      </Row>
+                   
 
                       <div className="product-content mt-5">
                         <h5 className="fs-14 mb-3">Product Description :</h5>
@@ -592,78 +333,216 @@ document.title ="Product Details | Velzon - React Admin & Dashboard Template";
                         </Nav>
 
                         <TabContent
-                        activeTab={customActiveTab}
+                          activeTab={customActiveTab}
                           className="border border-top-0 p-4"
                           id="nav-tabContent"
                         >
-                          <TabPane
-                            id="nav-speci"
-                            tabId="1"
-                          >
+                          <TabPane id="nav-speci" tabId="1">
                             <div className="table-responsive">
                               <table className="table mb-0">
                                 <tbody>
                                   <tr>
                                     <th scope="row" style={{ width: "200px" }}>
-                                      Category
+                                      Listing code
                                     </th>
-                                    <td>T-Shirt</td>
+                                    <td> EEMTI6</td>
                                   </tr>
                                   <tr>
                                     <th scope="row">Brand</th>
-                                    <td>Tommy Hilfiger</td>
+                                    <td>Rolex</td>
                                   </tr>
                                   <tr>
-                                    <th scope="row">Color</th>
-                                    <td>Blue</td>
+                                    <th scope="row">Model</th>
+                                    <td> Daytona</td>
                                   </tr>
                                   <tr>
-                                    <th scope="row">Material</th>
-                                    <td>Cotton</td>
+                                    <th scope="row">Reference number</th>
+                                    <td> 116519LN</td>
                                   </tr>
                                   <tr>
-                                    <th scope="row">Weight</th>
-                                    <td>140 Gram</td>
+                                    <th scope="row">Movement</th>
+                                    <td> Automatic</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">Case material</th>
+                                    <td> White gold</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">Bracelet material</th>
+                                    <td> Rubber</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">Year of production</th>
+                                    <td>2021</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">Condition</th>
+                                    <td>
+                                      {" "}
+                                      Unworn (Mint condition, without signs of
+                                      wear)
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">Scope of delivery</th>
+                                    <td>Original box, original papers</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">Gender</th>
+                                    <td>Men's watch/Unisex</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">Location</th>
+                                    <td>
+                                      United States of America, Florida, Fort
+                                      Lauderdale
+                                    </td>
+                                  </tr>
+                                  <hr />
+                                  <tr>
+                                    <th scope="row">Movement</th>
+                                    <td>Automatic</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">Movement/Caliber</th>
+                                    <td>4130</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">Power reserve</th>
+                                    <td>72h</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">Number of jewels</th>
+                                    <td>74</td>
+                                  </tr>
+
+                                  <tr>
+                                    <th scope="row">Case material</th>
+                                    <td>White gold</td>
+                                  </tr>
+
+                                  <tr>
+                                    <th scope="row">Case diameter</th>
+                                    <td>40 mm</td>
+                                  </tr>
+
+                                  <tr>
+                                    <th scope="row">Water resistance</th>
+                                    <td>10 ATM</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">Bezel material</th>
+                                    <td>Ceramic</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">Crystal</th>
+                                    <td>Sapphire crystal</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">Dial</th>
+                                    <td>Grey</td>
+                                  </tr>
+                                  <h4>Bracelet</h4>
+                                  <tr>
+                                    <th scope="row">Bracelet material</th>
+                                    <td>Rubber</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">Bracelet color</th>
+                                    <td>Black</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">Clasp</th>
+                                    <td>Fold clasp</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">Clasp material</th>
+                                    <td>White Gold</td>
                                   </tr>
                                 </tbody>
                               </table>
                             </div>
                           </TabPane>
-                          <TabPane
-                            id="nav-detail"
-                            tabId="2"
-                          >
+                          <TabPane id="nav-detail" tabId="2">
                             <div>
                               <h5 className="font-size-16 mb-3">
                                 Tommy Hilfiger Sweatshirt for Men (Pink)
                               </h5>
                               <p>
-                                Tommy Hilfiger men striped pink sweatshirt.
-                                Crafted with cotton. Material composition is
-                                100% organic cotton. This is one of the world’s
-                                leading designer lifestyle brands and is
-                                internationally recognized for celebrating the
-                                essence of classic American cool style,
-                                featuring preppy with a twist designs.
+                                Unworn Rolex Daytona 116500LN Silver Index Dial
+                                18k White Gold on Oysterflex. Includes box and
+                                papers. In stock. TERMS ***** Please do not ask
+                                us to complete a transaction outside of Chrono24
+                                or to circumvent sales tax or import duties in
+                                any way. Your request will be denied. Also, if
+                                you are purchasing from us, please reach out
+                                within three hours of your purchase to confirm
+                                your order. Payments are due within 24 hrs or
+                                your order will be cancelled. We do high volume
+                                and can not hold items for customers who have no
+                                intentions to pay. Please respect these
+                                guidelines. ***** Once a purchase is made and
+                                paid for, if you change your mind, you will be
+                                charged the shipping cost to and from you. In
+                                addition, if you are purchasing from outside of
+                                the United States, and wish to return, or
+                                decline to pay your countries customs fees, you
+                                will be charged the tax rate that we have to pay
+                                to import it back into the United States. There
+                                will be no exceptions so please make sure you
+                                ask any questions you have before your purchase.
+                                ACCESSORIES ***** Some manuals will be in a
+                                foreign language. Please note some of the older
+                                watches will come with a newer manual. Some of
+                                the boxes are not original to the watches but
+                                are authentic. Please note some boxes may have
+                                small marks. PAYMENT OPTIONS Chrono24 via
+                                Trusted checkout, or direct bank wire transfer.
+                                SHIPPING AND RETURN POLICY FedEx overnight
+                                within the U.S. and FedEx International Priority
+                                for worldwide. If you need to change your
+                                shipping address please contact Chrono 24. There
+                                policy states it must be approved by them before
+                                shipping. No exceptions can be made. **Please
+                                note that all International buyers are
+                                responsible for custom taxes/duties of the
+                                receiving country.** **Returns must be confirmed
+                                and approved by our office within 3 calendar
+                                days of receipt of the watch. Watches may be
+                                returned or exchanged, in the exact condition as
+                                it was received. Watches will be fully inspected
+                                upon return. If you purchased a unworn watch and
+                                during the inspection we can verify that it been
+                                worn, sized or marked the return will be voided.
+                                WARRANTY Included with each of our watches is a
+                                one year in house Limited Warranty on movement
+                                only. The warranty does not cover theft or loss
+                                of your watch, normal wear-and-tear, damage
+                                caused to your watch by accidents, mishandling,
+                                mistreatment or negligence (including, without
+                                limitation, damage caused by failure to follow
+                                manufacturer and/or our instructions). Wear of
+                                the watch strap, glass, clasp and cosmetic
+                                damage are not covered by our warranty. If your
+                                watch is covered by our Limited Warranty,
+                                deviations in timekeeping or damage caused to
+                                your watch by water are not covered by our
+                                warranty. **** For any other warranty questions
+                                please visit the manufactures websites. IN STORE
+                                PICKUP You may pick up in store with a 24 hour
+                                notice after your purchase has been made and
+                                payment is completed. No exceptions will be
+                                made. We are an independent watch dealer. We are
+                                not sponsored by, associated with or affiliated
+                                with Rolex S.A., Rolex USA, or any of their
+                                subsidiaries, nor are we associated with any
+                                other brands we sell. We provide our own
+                                warranties, if stated in our description. All
+                                wholesale watches do not include any warranty.
+                                Rolex or any of their subsidiaries are under no
+                                obligation to provide a warranty or service on
+                                any watches sold by our company for any reason.
                               </p>
-                              <div>
-                                <p className="mb-2">
-                                  <i className="mdi mdi-circle-medium me-1 text-muted align-middle"></i>{" "}
-                                  Machine Wash
-                                </p>
-                                <p className="mb-2">
-                                  <i className="mdi mdi-circle-medium me-1 text-muted align-middle"></i>{" "}
-                                  Fit Type: Regular
-                                </p>
-                                <p className="mb-2">
-                                  <i className="mdi mdi-circle-medium me-1 text-muted align-middle"></i>{" "}
-                                  100% Cotton
-                                </p>
-                                <p className="mb-0">
-                                  <i className="mdi mdi-circle-medium me-1 text-muted align-middle"></i>{" "}
-                                  Long sleeve
-                                </p>
-                              </div>
                             </div>
                           </TabPane>
                         </TabContent>
