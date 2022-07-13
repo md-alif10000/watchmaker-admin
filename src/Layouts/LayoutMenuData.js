@@ -175,8 +175,8 @@ const Navdata = () => {
 
         {
           id: 3,
-          label: "Create Product",
-          link: "/apps-ecommerce-add-product",
+          label: "Wizard caricamento",
+          link: "/add-product",
           parentId: "apps",
         },
 
@@ -612,97 +612,97 @@ const Navdata = () => {
         },
       ],
     },
-    {
-      id: "pages",
-      label: "Pages",
-      icon: "ri-pages-line",
-      link: "/#",
-      click: function (e) {
-        e.preventDefault();
-        setIsPages(!isPages);
-        setIscurrentState("Pages");
-        updateIconSidebar(e);
-      },
-      stateVariables: isPages,
-      subItems: [
-        {
-          id: "starter",
-          label: "Starter",
-          link: "/pages-starter",
-          parentId: "pages",
-        },
-        {
-          id: "profile",
-          label: "Profile",
-          link: "/#",
-          isChildItem: true,
-          click: function (e) {
-            e.preventDefault();
-            setIsProfile(!isProfile);
-          },
-          parentId: "pages",
-          stateVariables: isProfile,
-          childItems: [
-            {
-              id: 1,
-              label: "Simple Page",
-              link: "/pages-profile",
-              parentId: "pages",
-            },
-            {
-              id: 2,
-              label: "Settings",
-              link: "/pages-profile-settings",
-              parentId: "pages",
-            },
-          ],
-        },
-        { id: "team", label: "Team", link: "/pages-team", parentId: "pages" },
-        {
-          id: "timeline",
-          label: "Timeline",
-          link: "/pages-timeline",
-          parentId: "pages",
-        },
-        { id: "faqs", label: "FAQs", link: "/pages-faqs", parentId: "pages" },
-        {
-          id: "pricing",
-          label: "Pricing",
-          link: "/pages-pricing",
-          parentId: "pages",
-        },
-        {
-          id: "gallery",
-          label: "Gallery",
-          link: "/pages-gallery",
-          parentId: "pages",
-        },
-        {
-          id: "maintenance",
-          label: "Maintenance",
-          link: "/pages-maintenance",
-          parentId: "pages",
-        },
-        {
-          id: "comingSoon",
-          label: "Coming Soon",
-          link: "/pages-coming-soon",
-          parentId: "pages",
-        },
-        {
-          id: "sitemap",
-          label: "Sitemap",
-          link: "/pages-sitemap",
-          parentId: "pages",
-        },
-        {
-          id: "searchResults",
-          label: "Search Results",
-          link: "/pages-search-results",
-          parentId: "pages",
-        },
-      ],
-    },
+    // {
+    //   id: "pages",
+    //   label: "Pages",
+    //   icon: "ri-pages-line",
+    //   link: "/#",
+    //   click: function (e) {
+    //     e.preventDefault();
+    //     setIsPages(!isPages);
+    //     setIscurrentState("Pages");
+    //     updateIconSidebar(e);
+    //   },
+    //   stateVariables: isPages,
+    //   subItems: [
+    //     {
+    //       id: "starter",
+    //       label: "Starter",
+    //       link: "/pages-starter",
+    //       parentId: "pages",
+    //     },
+    //     {
+    //       id: "profile",
+    //       label: "Profile",
+    //       link: "/#",
+    //       isChildItem: true,
+    //       click: function (e) {
+    //         e.preventDefault();
+    //         setIsProfile(!isProfile);
+    //       },
+    //       parentId: "pages",
+    //       stateVariables: isProfile,
+    //       childItems: [
+    //         {
+    //           id: 1,
+    //           label: "Simple Page",
+    //           link: "/pages-profile",
+    //           parentId: "pages",
+    //         },
+    //         {
+    //           id: 2,
+    //           label: "Settings",
+    //           link: "/pages-profile-settings",
+    //           parentId: "pages",
+    //         },
+    //       ],
+    //     },
+    //     { id: "team", label: "Team", link: "/pages-team", parentId: "pages" },
+    //     {
+    //       id: "timeline",
+    //       label: "Timeline",
+    //       link: "/pages-timeline",
+    //       parentId: "pages",
+    //     },
+    //     { id: "faqs", label: "FAQs", link: "/pages-faqs", parentId: "pages" },
+    //     {
+    //       id: "pricing",
+    //       label: "Pricing",
+    //       link: "/pages-pricing",
+    //       parentId: "pages",
+    //     },
+    //     {
+    //       id: "gallery",
+    //       label: "Gallery",
+    //       link: "/pages-gallery",
+    //       parentId: "pages",
+    //     },
+    //     {
+    //       id: "maintenance",
+    //       label: "Maintenance",
+    //       link: "/pages-maintenance",
+    //       parentId: "pages",
+    //     },
+    //     {
+    //       id: "comingSoon",
+    //       label: "Coming Soon",
+    //       link: "/pages-coming-soon",
+    //       parentId: "pages",
+    //     },
+    //     {
+    //       id: "sitemap",
+    //       label: "Sitemap",
+    //       link: "/pages-sitemap",
+    //       parentId: "pages",
+    //     },
+    //     {
+    //       id: "searchResults",
+    //       label: "Search Results",
+    //       link: "/pages-search-results",
+    //       parentId: "pages",
+    //     },
+    //   ],
+    // },
     {
       id: "landing",
       label: "Landing",
