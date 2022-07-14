@@ -353,7 +353,7 @@ const EcommerceProducts = (props) => {
                 <div className="card-body border-bottom">
                   <div>
                     <p className="text-muted text-uppercase fs-12 fw-medium mb-2">
-                      Products
+                      Models
                     </p>
                     <ul className="list-unstyled mb-0 filter-list">
                       <li>
@@ -369,7 +369,7 @@ const EcommerceProducts = (props) => {
                           }
                         >
                           <div className="flex-grow-1">
-                            <h5 className="fs-13 mb-0 listname">Grocery</h5>
+                            <h5 className="fs-13 mb-0 listname">Day Date</h5>
                           </div>
                         </Link>
                       </li>
@@ -384,7 +384,7 @@ const EcommerceProducts = (props) => {
                           onClick={() => categories("Clothes")}
                         >
                           <div className="flex-grow-1">
-                            <h5 className="fs-13 mb-0 listname">Fashion</h5>
+                            <h5 className="fs-13 mb-0 listname">Date Just</h5>
                           </div>
                           <div className="flex-shrink-0 ms-2">
                             <span className="badge bg-light text-muted">5</span>
@@ -402,7 +402,7 @@ const EcommerceProducts = (props) => {
                           onClick={() => categories("Watches")}
                         >
                           <div className="flex-grow-1">
-                            <h5 className="fs-13 mb-0 listname">Watches</h5>
+                            <h5 className="fs-13 mb-0 listname">Navitimer</h5>
                           </div>
                         </Link>
                       </li>
@@ -417,7 +417,7 @@ const EcommerceProducts = (props) => {
                           onClick={() => categories("electronics")}
                         >
                           <div className="flex-grow-1">
-                            <h5 className="fs-13 mb-0 listname">Electronics</h5>
+                            <h5 className="fs-13 mb-0 listname">Submariner</h5>
                           </div>
                           <div className="flex-shrink-0 ms-2">
                             <span className="badge bg-light text-muted">5</span>
@@ -435,7 +435,7 @@ const EcommerceProducts = (props) => {
                           onClick={() => categories("Furniture")}
                         >
                           <div className="flex-grow-1">
-                            <h5 className="fs-13 mb-0 listname">Furniture</h5>
+                            <h5 className="fs-13 mb-0 listname">Nautilas</h5>
                           </div>
                           <div className="flex-shrink-0 ms-2">
                             <span className="badge bg-light text-muted">6</span>
@@ -454,7 +454,7 @@ const EcommerceProducts = (props) => {
                         >
                           <div className="flex-grow-1">
                             <h5 className="fs-13 mb-0 listname">
-                              Automotive Accessories
+                              Seamaster
                             </h5>
                           </div>
                         </Link>
@@ -470,7 +470,7 @@ const EcommerceProducts = (props) => {
                           onClick={() => categories("appliances")}
                         >
                           <div className="flex-grow-1">
-                            <h5 className="fs-13 mb-0 listname">Appliances</h5>
+                            <h5 className="fs-13 mb-0 listname">GMT Master II</h5>
                           </div>
                           <div className="flex-shrink-0 ms-2">
                             <span className="badge bg-light text-muted">7</span>
@@ -490,7 +490,7 @@ const EcommerceProducts = (props) => {
                           }
                         >
                           <div className="flex-grow-1">
-                            <h5 className="fs-13 mb-0 listname">Kids</h5>
+                            <h5 className="fs-13 mb-0 listname">Daytona</h5>
                           </div>
                         </Link>
                       </li>
@@ -504,9 +504,9 @@ const EcommerceProducts = (props) => {
                   </p>
 
                   <Nouislider
-                    range={{ min: 0, max: 600 }}
+                    range={{ min: 0, max: 60000 }}
                     tooltips={true}
-                    start={[100, 500]}
+                    start={[100, 5000]}
                     connect
                     onSlide={onUpdate}
                   />
@@ -523,7 +523,7 @@ const EcommerceProducts = (props) => {
                         Brands
                       </span>{" "}
                       <span className="badge bg-success rounded-pill align-middle ms-1">
-                        2
+                        20
                       </span>
                     </button>
                   </h2>
@@ -557,7 +557,7 @@ const EcommerceProducts = (props) => {
                               className="form-check-label"
                               htmlFor="productBrandRadio5"
                             >
-                              Boat
+                              Rolex
                             </label>
                           </div>
                           <div className="form-check">
@@ -570,7 +570,7 @@ const EcommerceProducts = (props) => {
                               className="form-check-label"
                               htmlFor="productBrandRadio4"
                             >
-                              OnePlus
+                              Cartier
                             </label>
                           </div>
                           <div className="form-check">
@@ -583,7 +583,7 @@ const EcommerceProducts = (props) => {
                               className="form-check-label"
                               htmlFor="productBrandRadio3"
                             >
-                              Realme
+                              Omega
                             </label>
                           </div>
                           <div className="form-check">
@@ -596,7 +596,7 @@ const EcommerceProducts = (props) => {
                               className="form-check-label"
                               htmlFor="productBrandRadio2"
                             >
-                              Sony
+                              Patek Philippe
                             </label>
                           </div>
                           <div className="form-check">
@@ -610,7 +610,7 @@ const EcommerceProducts = (props) => {
                               className="form-check-label"
                               htmlFor="productBrandRadio1"
                             >
-                              JBL
+                              breitling
                             </label>
                           </div>
 
